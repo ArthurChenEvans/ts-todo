@@ -1,0 +1,32 @@
+{
+	"dependencies": {
+		"dotenv": "^17.2.2",
+		"ejs": "^3.1.10",
+		"express": "^5.1.0",
+		"express-validator": "^7.2.1",
+		"pg": "^8.16.3"
+	},
+	"name": "ts-todo",
+	"version": "1.0.0",
+	"description": "1. One page 2. Plus button on the left hand side(svg icon?) at the top with an input box to add todo. 3. Check if empty. If not empty, Submit form button becomes clickable. Use 'disabled' attribute and remove when validation is good. 4. Clicking submit rerenders the page and adds a todo at the bottom of the input with an edit SVG icon and a delete svg icon. 5. Use CSS to check for attribute with `[attr]` instead of using TS.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArthurChenEvans/ts-todo.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ArthurChenEvans/ts-todo/issues"
+	},
+	"homepage": "https://github.com/ArthurChenEvans/ts-todo#readme",
+	"devDependencies": {
+		"@types/node": "^24.5.1",
+		"@types/pg": "^8.15.5"
+	}
+}
