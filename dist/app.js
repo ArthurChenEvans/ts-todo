@@ -20,7 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield query.getAllTodo();
-    console.log(result.rows);
     res.render('index', { rows: result.rows });
 }));
 app.post('/todos', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -28,7 +27,12 @@ app.post('/todos', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     res.redirect('/');
 }));
 app.post('/todos/todo/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    yield query.deleteTodo(Number(req.params.id));
+    console.log(req.body['isDelete']);
+    if (req.body['isDelete'] === 'true') {
+        yield query.deleteTodo(Number(req.params.id));
+        return res.redirect('/');
+    }
+    yield query.updateTodo(req.body[`todo-${req.params.id}`], Number(req.params.id));
     res.redirect('/');
 }));
 app.listen(3000, () => console.log(`Listening on port ${3000}`));

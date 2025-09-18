@@ -27,9 +27,9 @@ export const addTodo = async function(description: string) {
     }
 }
 
-export const updateTodo = async function(description: string) {
+export const updateTodo = async function(description: string, id: number) {
     try {
-        const row = await pool.query("UPDATE todo SET description = $1", [description]);
+        const row = await pool.query("UPDATE todo SET description = $1 WHERE id = $2", [description, id]);
         return row;
     } catch (err: any) {
         throw new Error(err.message);

@@ -41,10 +41,10 @@ export const addTodo = function (description) {
         }
     });
 };
-export const updateTodo = function (description) {
+export const updateTodo = function (description, id) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const row = yield pool.query("UPDATE todo SET description = $1", [description]);
+            const row = yield pool.query("UPDATE todo SET description = $1 WHERE id = $2", [description, id]);
             return row;
         }
         catch (err) {

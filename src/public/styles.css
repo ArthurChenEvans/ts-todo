@@ -86,3 +86,14 @@ li {
     background-color: lightgray;
     color: gray;
 }
+
+.update-svg {
+    background-color: lightblue;
+    color: blue;
+}
+
+.update-svg:hover {
+    cursor: pointer;
+    background-color: blue;
+    color: lightblue;
+}

@@ -15,7 +15,6 @@ app.use(express.urlencoded({ extended: true}));
 
 app.get('/', async (req, res) => {
     const result = await query.getAllTodo();
-    console.log(result.rows)
     res.render('index', { rows: result.rows });
 });
 
@@ -25,7 +24,14 @@ app.post('/todos', async (req, res) => {
 })
 
 app.post('/todos/todo/:id', async (req, res) => {
-    await query.deleteTodo(Number(req.params.id));
+    console.log(req.body['isDelete']);
+
+    if(req.body['isDelete'] === 'true') {
+        await query.deleteTodo(Number(req.params.id));
+        return res.redirect('/');
+    }
+
+    await query.updateTodo(req.body[`todo-${req.params.id}`], Number(req.params.id));
     res.redirect('/');
 })
 
