@@ -22,20 +22,26 @@ form {
     gap: 1rem;
 }
 
-.label-input_container {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
 form svg {
     height: 1.5rem;
     width: 1.5rem;
 }
 
-#add-task {
+#add-task_icon {
     border-radius: 100%;
-    background-color: palegreen;
+    background-color: lightgray;
+    color: gray;
+}
+
+input:not(:placeholder-shown) + button #add-task_icon {
+    background: palegreen;
     color: green;
+}
+
+input:not(:placeholder-shown) + button #add-task_icon:hover {
+    cursor: pointer;
+    background-color: green;
+    color: palegreen;
 }
 
 form button {
@@ -43,10 +49,4 @@ form button {
     background-color: white;
     height: 1.5rem;
     width: 1.5rem;
-}
-
-#submit-task {
-    border-radius: 100%;
-    background-color: lightgray;
-    color: darkgrey;
 }
