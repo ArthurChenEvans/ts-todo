@@ -6,7 +6,9 @@
 		"ejs": "^3.1.10",
 		"express": "^5.1.0",
 		"express-validator": "^7.2.1",
-		"pg": "^8.16.3"
+		"pg": "^8.16.3",
+		"ts-node": "^10.9.2",
+		"tsx": "^4.20.5"
 	},
 	"name": "ts-todo",
 	"version": "1.0.0",

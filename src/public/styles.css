@@ -10,6 +10,7 @@ html {
 
 body {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -19,18 +20,43 @@ body {
 form {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
 
-form svg {
-    height: 1.5rem;
-    width: 1.5rem;
+button {
+    background-color: white;
+    border: none;
 }
 
-#add-task_icon {
-    border-radius: 100%;
+.svg {
+    height: 1.5rem;
+    width: 1.5rem;
     background-color: lightgray;
     color: gray;
+    border-radius: 100%;
+    padding: 2px;
+}
+
+ul {
+    margin-top: 1rem;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-svg {
+    background-color: lightpink;
+    color: red;
+}
+
+.delete-svg:hover {
+    cursor: pointer;
+    background-color: red;
+    color: lightpink;
 }
 
 input:not(:placeholder-shown) + button #add-task_icon {
@@ -49,4 +75,14 @@ form button {
     background-color: white;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+li {
+    list-style: none;
+}
+
+#add-task_icon {
+    border-radius: 100%;
+    background-color: lightgray;
+    color: gray;
 }
